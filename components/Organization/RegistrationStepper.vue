@@ -1,19 +1,17 @@
 <script>
 import SelectRole from './Steps/SelectRole.vue'
 import EmailForm from './Steps/EmailForm.vue'
-import JoinSchool from './Steps/JoinSchool.vue'
-import ActivateSchool from './Steps/ActivateSchool.vue'
-import CreateSchool from './Steps/CreateSchool.vue'
+import JoinOrg from './Steps/JoinOrg.vue'
+import CreateOrg from './Steps/CreateOrg.vue'
 import PersonalDetails from './Steps/PersonalDetails.vue'
 
 export default {
-  components: { SelectRole, EmailForm, JoinSchool, ActivateSchool, CreateSchool, PersonalDetails },
+  components: { SelectRole, EmailForm, JoinOrg, CreateOrg, PersonalDetails },
   emits: ['sendRequest', 'sendMagicLink'],
   data: () => ({
-    form: { role: 'coordinator', school: {}, user: {} },
+    form: { role: 'coordinator', org: {}, user: {} },
     step: 0,
-    hasSchool: true,
-    hasUser: false,
+    hasOrg: true,
   }),
   methods: {
     prevStep() {
@@ -24,12 +22,12 @@ export default {
         const { valid } = await this.$refs.emailForm.validate()
         if (!valid) return
       }
-      else if (this.step === 2 && this.hasSchool && this.hasUser) {
+      else if (this.step === 2 && this.hasOrg) {
         this.$emit('sendRequest')
         return
       }
-      else if (this.step === 2 && !this.hasSchool) {
-        const { valid } = await this.$refs.schoolForm.validate()
+      else if (this.step === 2 && !this.hasOrg) {
+        const { valid } = await this.$refs.orgForm.validate()
         if (!valid) return
       }
       else if (this.step === 3) {
@@ -57,21 +55,17 @@ export default {
       @submit="nextStep"
     />
     <section v-if="step === 2">
-      <section v-if="hasSchool">
-        <JoinSchool v-if="hasUser" />
-        <ActivateSchool v-else />
-      </section>
-      <CreateSchool
+      <JoinOrg v-if="hasOrg" />
+      <CreateOrg
         v-else
-        ref="schoolForm"
-        v-model="form.school"
+        ref="orgForm"
+        v-model="form.org"
       />
     </section>
     <PersonalDetails
       v-if="step === 3"
       ref="userForm"
       v-model="form.user"
-      :show-first-last-name="hasSchool"
     />
 
     <hr class="my-10">
@@ -88,18 +82,17 @@ export default {
         <span class="ml-1 text-gray">Back</span>
       </v-btn>
       <div
-        v-if="step === 2 && hasSchool"
+        v-if="step === 2 && hasOrg"
         class="d-flex"
       >
         <v-btn
           variant="text"
           class="mr-2"
-          @click="hasSchool=false"
+          @click="hasOrg=false"
         >
-          <span class="text-gray">That Is Not My School</span>
+          <span class="text-gray">That Is Not My Org</span>
         </v-btn>
         <v-btn
-          v-if="hasUser"
           color="primary"
           rounded="xl"
           @click="nextStep"
@@ -109,18 +102,6 @@ export default {
             width="20"
             height="20"
           />
-        </v-btn>
-        <v-btn
-          v-else
-          color="primary"
-          rounded="xl"
-          @click="nextStep"
-        >
-          <SvgoCheck
-            width="20"
-            height="20"
-          />
-          <span class="ml-1">Activate School Account</span>
         </v-btn>
       </div>
       <v-btn

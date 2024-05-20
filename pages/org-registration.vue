@@ -25,12 +25,12 @@ function sendMagicLink(value: string) {
       />
     </div>
     <div class="form-container d-flex justify-center align-center">
-      <SchoolRegistrationStepper
+      <OrganizationRegistrationStepper
         v-if="!isRequestSent"
         @send-request="sendRequest"
         @send-magic-link="sendMagicLink"
       />
-      <SchoolRequestSent
+      <OrganizationRequestSent
         v-else
         :email="email"
         :type="type"
