@@ -14,6 +14,17 @@ export const useContextStore = defineStore('context', {
       return $fetch('/api/v1/auth/callback', { query }).catch(e => console.error(e))
     },
 
+    async fetchContext() {
+      try {
+        const headers = useRequestHeaders(['cookie'])
+        const { data } = await useFetch('/api/v1/auth/context', { headers })
+        this.me = data.value.user || null
+      }
+      catch (e) {
+        // console.error(e)
+      }
+    },
+
     async signUpSchool({ email, password }: { email: string, password: string }) {
       await $fetch('/api/v1/signup/school', {
         method: 'POST',
