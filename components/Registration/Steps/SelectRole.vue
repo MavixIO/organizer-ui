@@ -1,4 +1,6 @@
 <script lang="ts">
+import { Role } from '~/enums'
+
 export default {
   props: {
     modelValue: String,
@@ -7,13 +9,13 @@ export default {
   data: () => ({
     roles: [
       {
-        id: 'coordinator',
+        id: Role.COORDINATOR,
         icon: 'calendar',
         title: 'Event Coordinator',
         description: 'Register as an organiser to manage and coordinate registrations and events for schools and directly with parents.',
       },
       {
-        id: 'staff',
+        id: Role.STAFF,
         icon: 'school',
         title: 'School Staff',
         description: 'For school administrators, teachers, and finance staff responsible for organising and overseeing school events and trips.',

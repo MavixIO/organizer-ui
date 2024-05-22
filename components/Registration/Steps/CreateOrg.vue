@@ -1,4 +1,7 @@
 <script>
+import { mapActions } from 'pinia'
+import { useHelperStore } from '~/stores/helper'
+
 export default {
   props: {
     modelValue: Object,
@@ -15,11 +18,16 @@ export default {
     },
   },
   methods: {
+    ...mapActions(useHelperStore, ['blobToBase64']),
     async validate() {
       return this.$refs.form.validate()
     },
-    update(key, value) {
-      this.$emit('update:modelValue', { ...this.form, [key]: value })
+    async update(key, value) {
+      const data = (key === 'file') ? { [key]: value } : { [key]: value.target.value }
+      if (key === 'file') {
+        data.logoFile = await this.blobToBase64(value)
+      }
+      this.$emit('update:modelValue', { ...this.form, ...data })
     },
   },
 }
@@ -48,6 +56,7 @@ export default {
         :rules="[required]"
         variant="outlined"
         placeholder="Enter Your Organisation Name"
+        @input="update('name', $event)"
       />
       <p class="mb-1">
         Organisation Address
@@ -57,6 +66,7 @@ export default {
         :rules="[required]"
         variant="outlined"
         placeholder="Enter the address where your Organisation is located"
+        @input="update('address', $event)"
       />
       <p class="mb-1">
         Organisation Logo

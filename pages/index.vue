@@ -6,4 +6,5 @@
 definePageMeta({
   layout: 'empty',
 })
+navigateTo({ name: 'registration' })
 </script>

@@ -2,7 +2,7 @@
 export default {
   props: {
     modelValue: Object,
-    showFirstLastName: Boolean,
+    isStaff: Boolean,
   },
   emits: ['update:modelValue'],
   setup() {
@@ -14,13 +14,20 @@ export default {
     form() {
       return this.modelValue
     },
+    roleText() {
+      return this.isStaff ? 'Role In School' : 'Role In Organization'
+    },
+    rolePlaceholder() {
+      return this.isStaff ? 'e.g. Principal, Administrator, Teacher' : 'e.g. Owner, Head Coach, Secretary'
+    },
   },
   methods: {
     async validate() {
       return this.$refs.form.validate()
     },
     update(key, value) {
-      this.$emit('update:modelValue', { ...this.form, [key]: value })
+      const data = value.target.value
+      this.$emit('update:modelValue', { ...this.form, [key]: data })
     },
   },
 }
@@ -41,11 +48,8 @@ export default {
       class="pa-5"
       rounded="lg"
     >
-      <div
-        v-if="showFirstLastName"
-        class="d-flex"
-      >
-        <div>
+      <div class="d-flex">
+        <div class="w-50">
           <p class="mb-1">
             First Name
           </p>
@@ -54,9 +58,10 @@ export default {
             :rules="[required]"
             variant="outlined"
             placeholder="Enter Your First Name"
+            @input="update('firstname', $event)"
           />
         </div>
-        <div>
+        <div class="ml-2 w-50">
           <p class="mb-1">
             Last Name
           </p>
@@ -65,28 +70,19 @@ export default {
             :rules="[required]"
             variant="outlined"
             placeholder="Enter Your Last Name"
+            @input="update('lastname', $event)"
           />
         </div>
       </div>
-      <div v-else>
-        <p class="mb-1">
-          Name
-        </p>
-        <v-text-field
-          :model-value="form.name"
-          :rules="[required]"
-          variant="outlined"
-          placeholder="Enter Your Full Name"
-        />
-      </div>
       <p class="mb-1">
-        Role In School
+        {{ roleText }}
       </p>
       <v-text-field
         :model-value="form.role"
         :rules="[required]"
         variant="outlined"
-        placeholder="e.g. Principal, Administrator, Teacher"
+        :placeholder="rolePlaceholder"
+        @input="update('role', $event)"
       />
       <p class="mb-1">
         Display Name
@@ -96,6 +92,7 @@ export default {
         :rules="[required]"
         variant="outlined"
         placeholder="e.g. Ms T Smith"
+        @input="update('displayName', $event)"
       />
       <p class="mb-1">
         Phone Number
@@ -105,6 +102,7 @@ export default {
         :rules="[required]"
         variant="outlined"
         placeholder="+1 234 567 8900"
+        @input="update('phone', $event)"
       />
     </v-card>
   </v-form>
