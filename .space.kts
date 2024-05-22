@@ -25,7 +25,7 @@ job("Deploy to dev") {
       interpreter = "/bin/bash"
       content = """
         export TAG=${'$'}(echo ${'$'}JB_SPACE_GIT_BRANCH | cut -d'/' -f 3)
-        cd /home/runner/fixturr-compose/ui
+        cd /home/runner/fixturr-compose/actilynk/ui
         echo ${'$'}TAG && docker compose pull ui
         docker compose up -d --force-recreate ui
         echo 'Container has been started'
