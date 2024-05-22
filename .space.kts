@@ -26,8 +26,8 @@ job("Deploy to dev") {
       content = """
         export TAG=${'$'}(echo ${'$'}JB_SPACE_GIT_BRANCH | cut -d'/' -f 3)
         cd /home/runner/fixturr-compose/actilynk/ui
-        echo ${'$'}TAG && docker compose pull ui
-        docker compose up -d --force-recreate ui
+        echo ${'$'}TAG && docker compose pull
+        docker compose up -d --force-recreate
         echo 'Container has been started'
         echo 'Start pruning unused containers, images, networks, build cache'
         docker system prune -f
