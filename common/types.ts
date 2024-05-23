@@ -1,4 +1,4 @@
-export interface GetSchool {
+export interface SchoolPublicData {
   id: string
   name: string
   abbreviation: string
@@ -7,7 +7,7 @@ export interface GetSchool {
   hasUsers: boolean
 }
 
-export interface GetOrganisation {
+export interface OrganisationPublicData {
   id: string
   name: string
   address: string

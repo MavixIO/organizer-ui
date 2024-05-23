@@ -1,9 +1,9 @@
 <script lang="ts">
-import type { GetSchool } from '~/common/types'
+import type { SchoolPublicData } from '~/common/types'
 
 export default {
   props: {
-    schools: Array<GetSchool>,
+    schools: Array<SchoolPublicData>,
   },
   emits: ['onSelectOrganisation'],
   data: () => ({

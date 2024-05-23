@@ -69,41 +69,33 @@ export default {
         if (this.isStaff) {
           this.schools = await this.schoolsStore.getSchoolsByDomain(domain)
           this.hasSchool = this.schools.length > 0
-        }
-        else {
+        } else {
           this.organisations = await this.organisationsStore.getOrganisationsByDomain(domain)
           this.hasOrg = this.organisations.length > 0
         }
-      }
-      else if (this.step === 2 && this.showCreateSchool) {
+      } else if (this.step === 2 && this.showCreateSchool) {
         const { valid } = await this.$refs.schoolForm.validate()
         if (!valid) return
-      }
-      else if (this.step === 2 && this.showCreateOrg) {
+      } else if (this.step === 2 && this.showCreateOrg) {
         const { valid } = await this.$refs.orgForm.validate()
         if (!valid) return
-      }
-      else if (this.step === 3) {
+      } else if (this.step === 3) {
         const { valid } = await this.$refs.userForm.validate()
         if (!valid) return
 
         if (this.showCreateSchool) {
           this.createSchool()
           return
-        }
-        else if (this.showActivateSchool) {
+        } else if (this.showActivateSchool) {
           await this.activateSchool()
           return
-        }
-        else if (this.showJoinSchool) {
+        } else if (this.showJoinSchool) {
           await this.requestJoinSchool()
           return
-        }
-        else if (this.showJoinOrg) {
+        } else if (this.showJoinOrg) {
           await this.requestJoinOrg()
           return
-        }
-        else if (this.showCreateOrg) {
+        } else if (this.showCreateOrg) {
           await this.createOrg()
           return
         }
