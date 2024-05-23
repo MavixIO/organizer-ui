@@ -21,7 +21,7 @@ function sendMagicLink(value: string) {
     <div class="image-container d-none d-md-flex">
       <v-img
         cover
-        src="/img/bg-tennis.jpeg"
+        src="/img/bg-tennis.webp"
       />
     </div>
     <div class="form-container d-flex justify-center align-center">
