@@ -45,26 +45,31 @@ export default {
 
 <style lang="scss" scoped>
 .element {
-  border: 1px #E5E5E5 solid;
+  border: 1px rgb(var(--v-theme-neutral-200)) solid;
+  background: white;
   padding: .8em;
   border-radius: 10px;
   position: relative;
+  transition: border 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
   cursor: pointer;
   .check-icon {
     position: absolute;
     right: 10px;
+    transition: opacity 0.3s ease;
   }
 }
 .title {
-  color: #424242;
+  color: rgb(var(--v-theme-neutral-600));
   font-weight: 600;
+  transition: color 0.3s ease;
 }
 .description {
-  color: #737373;
+  color: rgb(var(--v-theme-neutral-500));
   font-size: 16px;
 }
 .selected {
-  border: 2px rgb(var(--v-theme-primary)) solid;
+  border: 1px rgb(var(--v-theme-primary)) solid;
+  box-shadow: 0 0 0 1px rgb(var(--v-theme-primary));
   .title {
     color: rgb(var(--v-theme-primary));
   }

@@ -77,6 +77,7 @@ export default {
 }
 
 .selected {
-  border: 2px rgb(var(--v-theme-primary)) solid;
+  border: 1px rgb(var(--v-theme-primary)) solid;
+  box-shadow: 0 0 0 1px rgb(var(--v-theme-primary));
 }
 </style>

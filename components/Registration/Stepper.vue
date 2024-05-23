@@ -204,7 +204,7 @@ export default {
       :is-staff="isStaff"
     />
 
-    <hr class="my-10">
+    <hr class="custom-hr my-10">
     <div class="d-flex justify-space-between">
       <v-btn
         variant="text"
@@ -280,3 +280,10 @@ export default {
     </div>
   </div>
 </template>
+<style scoped>
+.custom-hr {
+  border: none;
+  height: 1px; 
+  background-color: rgb(var(--v-theme-neutral-200)); 
+}
+</style>
