@@ -12,3 +12,220 @@ button.v-btn {
 .text-gray {
   color: #737373
 }
+
+// src/styles/main.scss
+
+// Font Family
+$font-family-primary: 'Your Font Family', sans-serif;
+
+// Font Weights
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+$font-weight-black: 900;
+
+// Desktop Headings
+$desktop-display-large-font-size: 52px;
+$desktop-display-large-line-height: 56px;
+$desktop-display-large-tracking: -2%;
+$desktop-display-small-font-size: 44px;
+$desktop-display-small-line-height: 48px;
+$desktop-display-small-tracking: -2%;
+$desktop-heading-h1-font-size: 40px;
+$desktop-heading-h1-line-height: 48px;
+$desktop-heading-h1-tracking: -2%;
+$desktop-heading-h2-font-size: 36px;
+$desktop-heading-h2-line-height: 44px;
+$desktop-heading-h2-tracking: -2%;
+$desktop-heading-h3-font-size: 32px;
+$desktop-heading-h3-line-height: 40px;
+$desktop-heading-h3-tracking: -2%;
+$desktop-heading-h4-font-size: 28px;
+$desktop-heading-h4-line-height: 36px;
+$desktop-heading-h4-tracking: -2%;
+$desktop-heading-h5-font-size: 24px;
+$desktop-heading-h5-line-height: 32px;
+$desktop-heading-h5-tracking: -2%;
+$desktop-heading-h6-font-size: 20px;
+$desktop-heading-h6-line-height: 28px;
+$desktop-heading-h6-tracking: -2%;
+
+// Mobile Headings
+$mobile-heading-h1-font-size: 36px;
+$mobile-heading-h1-line-height: 44px;
+$mobile-heading-h1-tracking: -2%;
+$mobile-heading-h2-font-size: 32px;
+$mobile-heading-h2-line-height: 40px;
+$mobile-heading-h2-tracking: -2%;
+$mobile-heading-h3-font-size: 28px;
+$mobile-heading-h3-line-height: 36px;
+$mobile-heading-h3-tracking: -2%;
+$mobile-heading-h4-font-size: 24px;
+$mobile-heading-h4-line-height: 32px;
+$mobile-heading-h5-font-size: 20px;
+$mobile-heading-h5-line-height: 28px;
+$mobile-heading-h6-font-size: 18px;
+$mobile-heading-h6-line-height: 24px;
+
+// Paragraphs
+$paragraph-large-font-size: 18px;
+$paragraph-large-line-height: 28px;
+$paragraph-medium-font-size: 16px;
+$paragraph-medium-line-height: 24px;
+$paragraph-small-font-size: 14px;
+$paragraph-small-line-height: 20px;
+$paragraph-xsmall-font-size: 12px;
+$paragraph-xsmall-line-height: 20px;
+$overline-font-size: 14px;
+$overline-line-height: 12px;
+
+// Applying Styles
+body {
+  font-family: $font-family-primary;
+}
+
+// Desktop Headings
+.display-large {
+  font-size: $desktop-display-large-font-size;
+  line-height: $desktop-display-large-line-height;
+  letter-spacing: $desktop-display-large-tracking;
+}
+
+.display-small {
+  font-size: $desktop-display-small-font-size;
+  line-height: $desktop-display-small-line-height;
+  letter-spacing: $desktop-display-small-tracking;
+}
+
+.heading-h1, .heading-h1-regular, .heading-h1-medium, .heading-h1-semi-bold, .heading-h1-bold, .heading-h1-black {
+  font-size: $desktop-heading-h1-font-size;
+  line-height: $desktop-heading-h1-line-height;
+  letter-spacing: $desktop-heading-h1-tracking;
+}
+
+.heading-h2, .heading-h2-regular, .heading-h2-medium, .heading-h2-semi-bold, .heading-h2-bold, .heading-h2-black {
+  font-size: $desktop-heading-h2-font-size;
+  line-height: $desktop-heading-h2-line-height;
+  letter-spacing: $desktop-heading-h2-tracking;
+}
+
+.heading-h3, .heading-h3-regular, .heading-h3-medium, .heading-h3-semi-bold, .heading-h3-bold, .heading-h3-black {
+  font-size: $desktop-heading-h3-font-size;
+  line-height: $desktop-heading-h3-line-height;
+  letter-spacing: $desktop-heading-h3-tracking;
+}
+
+.heading-h4, .heading-h4-regular, .heading-h4-medium, .heading-h4-semi-bold, .heading-h4-bold, .heading-h4-black {
+  font-size: $desktop-heading-h4-font-size;
+  line-height: $desktop-heading-h4-line-height;
+  letter-spacing: $desktop-heading-h4-tracking;
+}
+
+.heading-h5, .heading-h5-regular, .heading-h5-medium, .heading-h5-semi-bold, .heading-h5-bold, .heading-h5-black {
+  font-size: $desktop-heading-h5-font-size;
+  line-height: $desktop-heading-h5-line-height;
+  letter-spacing: $desktop-heading-h5-tracking;
+}
+
+.heading-h6, .heading-h6-regular, .heading-h6-medium, .heading-h6-semi-bold, .heading-h6-bold, .heading-h6-black {
+  font-size: $desktop-heading-h6-font-size;
+  line-height: $desktop-heading-h6-line-height;
+  letter-spacing: $desktop-heading-h6-tracking;
+}
+
+// Applying Weights for Desktop Headings
+.heading-h1-regular, .heading-h2-regular, .heading-h3-regular, .heading-h4-regular, .heading-h5-regular, .heading-h6-regular {
+  font-weight: $font-weight-regular;
+}
+
+.heading-h1-medium, .heading-h2-medium, .heading-h3-medium, .heading-h4-medium, .heading-h5-medium, .heading-h6-medium {
+  font-weight: $font-weight-medium;
+}
+
+.heading-h1-semi-bold, .heading-h2-semi-bold, .heading-h3-semi-bold, .heading-h4-semi-bold, .heading-h5-semi-bold, .heading-h6-semi-bold {
+  font-weight: $font-weight-semi-bold;
+}
+
+.heading-h1-bold, .heading-h2-bold, .heading-h3-bold, .heading-h4-bold, .heading-h5-bold, .heading-h6-bold {
+  font-weight: $font-weight-bold;
+}
+
+.heading-h1-black, .heading-h2-black, .heading-h3-black, .heading-h4-black, .heading-h5-black, .heading-h6-black {
+  font-weight: $font-weight-black;
+}
+
+// Mobile Headings
+@media (max-width: 767px) {
+  .heading-h1, .heading-h1-regular, .heading-h1-medium, .heading-h1-semi-bold, .heading-h1-bold, .heading-h1-black {
+    font-size: $mobile-heading-h1-font-size;
+    line-height: $mobile-heading-h1-line-height;
+    letter-spacing: $mobile-heading-h1-tracking;
+  }
+
+  .heading-h2, .heading-h2-regular, .heading-h2-medium, .heading-h2-semi-bold, .heading-h2-bold, .heading-h2-black {
+    font-size: $mobile-heading-h2-font-size;
+    line-height: $mobile-heading-h2-line-height;
+    letter-spacing: $mobile-heading-h2-tracking;
+  }
+
+  .heading-h3, .heading-h3-regular, .heading-h3-medium, .heading-h3-semi-bold, .heading-h3-bold, .heading-h3-black {
+    font-size: $mobile-heading-h3-font-size;
+    line-height: $mobile-heading-h3-line-height;
+    letter-spacing: $mobile-heading-h3-tracking;
+  }
+
+  .heading-h4, .heading-h4-regular, .heading-h4-medium, .heading-h4-semi-bold, .heading-h4-bold, .heading-h4-black {
+    font-size: $mobile-heading-h4-font-size;
+    line-height: $mobile-heading-h4-line-height;
+  }
+
+  .heading-h5, .heading-h5-regular, .heading-h5-medium, .heading-h5-semi-bold, .heading-h5-bold, .heading-h5-black {
+    font-size: $mobile-heading-h5-font-size;
+    line-height: $mobile-heading-h5-line-height;
+  }
+
+  .heading-h6, .heading-h6-regular, .heading-h6-medium, .heading-h6-semi-bold, .heading-h6-bold, .heading-h6-black {
+    font-size: $mobile-heading-h6-font-size;
+    line-height: $mobile-heading-h6-line-height;
+  }
+}
+
+// Paragraphs
+.paragraph-large, .paragraph-large-regular, .paragraph-large-medium, .paragraph-large-semi-bold {
+  font-size: $paragraph-large-font-size;
+  line-height: $paragraph-large-line-height;
+}
+
+.paragraph-medium, .paragraph-medium-regular, .paragraph-medium-medium, .paragraph-medium-semi-bold {
+  font-size: $paragraph-medium-font-size;
+  line-height: $paragraph-medium-line-height;
+}
+
+.paragraph-small, .paragraph-small-regular, .paragraph-small-medium, .paragraph-small-semi-bold {
+  font-size: $paragraph-small-font-size;
+  line-height: $paragraph-small-line-height;
+}
+
+.paragraph-xsmall, .paragraph-xsmall-regular, .paragraph-xsmall-medium, .paragraph-xsmall-semi-bold {
+  font-size: $paragraph-xsmall-font-size;
+  line-height: $paragraph-xsmall-line-height;
+}
+
+.overline {
+  font-size: $overline-font-size;
+  line-height: $overline-line-height;
+}
+
+// Applying Weights for Paragraphs
+.paragraph-large-regular, .paragraph-medium-regular, .paragraph-small-regular, .paragraph-xsmall-regular {
+  font-weight: $font-weight-regular;
+}
+
+.paragraph-large-medium, .paragraph-medium-medium, .paragraph-small-medium, .paragraph-xsmall-medium {
+  font-weight: $font-weight-medium;
+}
+
+.paragraph-large-semi-bold, .paragraph-medium-semi-bold, .paragraph-small-semi-bold, .paragraph-xsmall-semi-bold {
+  font-weight: $font-weight-semi-bold;
+}
