@@ -19,8 +19,7 @@ export const useContextStore = defineStore('context', {
         const headers = useRequestHeaders(['cookie'])
         const { data } = await useFetch('/api/v1/auth/context', { headers })
         this.me = data.value.user || null
-      }
-      catch (e) {
+      } catch (e) {
         // console.error(e)
       }
     },

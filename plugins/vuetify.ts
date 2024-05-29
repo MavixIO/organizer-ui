@@ -68,7 +68,7 @@ export default defineNuxtPlugin((app) => {
             'destructive-600': '#DC2626',
             'destructive-700': '#B91C1C',
             'destructive-800': '#991B1B',
-            'destructive-900': '#7F1D1D'
+            'destructive-900': '#7F1D1D',
           },
         },
       },

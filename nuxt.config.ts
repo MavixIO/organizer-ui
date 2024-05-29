@@ -30,11 +30,6 @@ export default defineNuxtConfig({
     },
   },
   css: ['~/assets/css/main.scss'],
-  eslint: {
-    config: {
-      stylistic: true,
-    },
-  },
   svgo: {
     defaultImport: 'component',
   },
