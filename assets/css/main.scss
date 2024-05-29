@@ -13,11 +13,6 @@ button.v-btn {
   color: #737373
 }
 
-// src/styles/main.scss
-
-// Font Family
-$font-family-primary: 'Your Font Family', sans-serif;
-
 // Font Weights
 $font-weight-regular: 400;
 $font-weight-medium: 500;
@@ -79,11 +74,6 @@ $paragraph-xsmall-font-size: 12px;
 $paragraph-xsmall-line-height: 20px;
 $overline-font-size: 14px;
 $overline-line-height: 12px;
-
-// Applying Styles
-body {
-  font-family: $font-family-primary;
-}
 
 // Desktop Headings
 .display-large {
