@@ -280,10 +280,11 @@ export default {
     </div>
   </div>
 </template>
+
 <style scoped>
 .custom-hr {
   border: none;
-  height: 1px; 
-  background-color: rgb(var(--v-theme-neutral-200)); 
+  height: 1px;
+  background-color: rgb(var(--v-theme-neutral-200));
 }
 </style>

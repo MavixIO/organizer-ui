@@ -1,7 +1,5 @@
 <script setup>
-definePageMeta({
-  layout: 'empty',
-})
+useHead({ title: 'Dashboard' })
 const contextStore = useContextStore()
 await contextStore.fetchContext()
 const me = contextStore.me
