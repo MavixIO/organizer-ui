@@ -1,5 +1,8 @@
 <script setup>
 useHead({ title: 'Events' })
+definePageMeta({
+  middleware: ['auth'],
+})
 </script>
 
 <template>

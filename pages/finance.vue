@@ -1,5 +1,8 @@
 <script setup>
 useHead({ title: 'Finance' })
+definePageMeta({
+  middleware: ['auth'],
+})
 </script>
 
 <template>

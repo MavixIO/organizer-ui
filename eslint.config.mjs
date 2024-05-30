@@ -13,7 +13,5 @@ export default withNuxt({
       allowModifiers: true,
     }],
     '@typescript-eslint/no-unused-vars': ['error', { vars: 'all', args: 'after-used', ignoreRestSiblings: false }],
-    '@stylistic/brace-style': [2, '1tbs'],
-    '@stylistic/quote-props': 0,
   },
 })

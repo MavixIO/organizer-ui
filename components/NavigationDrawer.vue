@@ -98,7 +98,7 @@
       </v-list-item>
 
       <v-list-item
-        to="/settings"
+        :to="{ name: 'settings-info' }"
         width="56"
         height="56"
         class="d-flex justify-center align-center settings"

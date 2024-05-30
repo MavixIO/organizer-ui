@@ -1,5 +1,8 @@
 <script setup>
 useHead({ title: 'Contacts' })
+definePageMeta({
+  middleware: ['auth'],
+})
 </script>
 
 <template>

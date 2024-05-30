@@ -23,5 +23,8 @@ export const useOrganisationsStore = defineStore('organisations', {
     async signup(body: SignUp) {
       return $fetch('/api/v1/signup/organization', { method: 'POST', body })
     },
+    async get(id: string) {
+      return $fetch(`/api/v1/organizations/${id}`)
+    },
   },
 })

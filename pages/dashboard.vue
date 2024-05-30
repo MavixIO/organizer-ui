@@ -1,5 +1,8 @@
 <script setup>
 useHead({ title: 'Dashboard' })
+definePageMeta({
+  middleware: ['auth'],
+})
 const contextStore = useContextStore()
 await contextStore.fetchContext()
 const me = contextStore.me
