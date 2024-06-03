@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import type { School, User } from '~/common/types'
+import type { UserStatus } from '~/enums'
 
 interface RequestJoin {
   schoolId: string
@@ -12,6 +13,14 @@ interface SignUp {
   school: School
 }
 
+interface UsersQuery {
+  status: UserStatus
+  page: number
+  limit: number
+  roleId: string
+  search: string
+}
+
 export const useSchoolsStore = defineStore('schools', {
   actions: {
     async getSchoolsByDomain(domain: string) {
@@ -22,6 +31,12 @@ export const useSchoolsStore = defineStore('schools', {
     },
     async signup(body: SignUp) {
       return $fetch('/api/v1/signup/school', { method: 'POST', body })
+    },
+    async get(id: string) {
+      return $fetch(`/api/v1/schools/${id}`)
+    },
+    async getUsers({ id, query }: { id: string, query: UsersQuery }) {
+      return $fetch(`/api/v1/schools/${id}/users`, { query })
     },
   },
 })

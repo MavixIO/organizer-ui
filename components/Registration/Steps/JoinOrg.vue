@@ -3,7 +3,10 @@ import type { OrganisationPublicData } from '~/common/types'
 
 export default {
   props: {
-    organisations: Array<OrganisationPublicData>,
+    organisations: {
+      type: Array<OrganisationPublicData>,
+      default: () => [],
+    },
   },
   emits: ['onSelectOrganisation'],
   data: () => ({

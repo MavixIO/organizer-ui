@@ -110,7 +110,6 @@ export default {
 
     selectOrg(organisation) {
       this.selectedOrg = organisation
-      this.hasOrg = organisation.hasUsers
     },
 
     async requestJoinSchool() {
@@ -189,7 +188,7 @@ export default {
       <JoinOrg
         v-if="showJoinOrg"
         :organisations="organisations"
-        @on-select-school="selectOrg"
+        @on-select-organisation="selectOrg"
       />
       <CreateOrg
         v-if="showCreateOrg"

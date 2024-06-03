@@ -11,7 +11,7 @@ export default {
       return this.value.name
     },
     displayName () {
-      return this.value.displayName
+      return this.value.displayName || this.value.abbreviation
     },
     website () {
       return this.value.website

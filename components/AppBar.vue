@@ -14,6 +14,7 @@ const email = ref('joe.bloggs@email.com')
         density="compact"
         hide-details
         placeholder="Search"
+        rounded="xl"
       >
         <template #prepend-inner>
           <SvgoSearch

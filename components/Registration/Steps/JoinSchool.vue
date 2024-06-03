@@ -3,9 +3,12 @@ import type { SchoolPublicData } from '~/common/types'
 
 export default {
   props: {
-    schools: Array<SchoolPublicData>,
+    schools: {
+      type: Array<SchoolPublicData>,
+      default: () => [],
+    },
   },
-  emits: ['onSelectOrganisation'],
+  emits: ['onSelectSchool'],
   data: () => ({
     selected: 0,
   }),
@@ -23,7 +26,7 @@ export default {
   methods: {
     selectSchool(index: number) {
       this.selected = index
-      this.$emit('onSelectOrganisation', this.schools![index])
+      this.$emit('onSelectSchool', this.schools![index])
     },
   },
 }

@@ -1,12 +1,30 @@
 import { defineStore } from 'pinia'
 
+interface User {
+  id: string
+  firstname: string
+  lastname: string
+  displayName?: string
+  email: string
+  phone?: string
+  avatar?: string
+  fusionUserId?: string
+  schoolId?: string
+  organizationId?: string
+  superRole: boolean
+  displayRole: string
+  roleId?: string
+}
+
 export const useContextStore = defineStore('context', {
   state: () => ({
-    me: null,
+    me: null as User | null,
   }),
 
   getters: {
     isLoggedIn: state => !!state.me,
+    isSchoolUser: state => !!state.me?.schoolId,
+    isOrgUser: state => !!state.me?.organizationId,
   },
 
   actions: {
@@ -20,7 +38,8 @@ export const useContextStore = defineStore('context', {
         const { data } = await useFetch('/api/v1/auth/context', { headers })
         this.me = data.value.user || null
       } catch (e) {
-        // console.error(e)
+        console.error(e)
+        this.me = null
       }
     },
 
