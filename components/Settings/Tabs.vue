@@ -1,10 +1,14 @@
 <script setup>
+const context = useContextStore()
+const infoLink = computed(() => {
+  return context.isOrgUser ? { name: 'settings-organisation' } : { name: 'settings-school' }
+})
 </script>
 
 <template>
   <v-card rounded="lg" variant="outlined">
     <v-list>
-      <v-list-item :to="{ name: 'settings-info' }">
+      <v-list-item :to="infoLink">
         <template #prepend>
           <SvgoInformationSquare width="24" height="24" class="mr-3" />
         </template>

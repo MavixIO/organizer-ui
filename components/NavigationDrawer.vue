@@ -1,3 +1,10 @@
+<script setup>
+const context = useContextStore()
+const infoLink = computed(() => {
+  return context.isOrgUser ? { name: 'settings-organisation' } : { name: 'settings-school' }
+})
+</script>
+
 <template>
   <v-navigation-drawer
     width="90"
@@ -98,7 +105,7 @@
       </v-list-item>
 
       <v-list-item
-        :to="{ name: 'settings-info' }"
+        :to="infoLink"
         width="56"
         height="56"
         class="d-flex justify-center align-center settings"

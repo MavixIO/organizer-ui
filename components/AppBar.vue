@@ -3,8 +3,8 @@ const contextStore = useContextStore()
 await contextStore.fetchContext()
 const me = contextStore.me
 
-const name = computed(() => me.displayName ? me.displayName : 'Joe Bloggs')
-const email = computed(() => me.email ? me.email : 'joe.bloggs@email.com')
+const name = computed(() => me.displayName || '')
+const email = computed(() => me.email || '')
 </script>
 
 <template>
