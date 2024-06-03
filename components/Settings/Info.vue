@@ -24,7 +24,7 @@ export default {
 </script>
 
 <template>
-  <v-card rounded="lg" class="pa-6">
+  <v-card rounded="lg" class="pa-6" variant="outlined">
     <v-row>
       <v-col>
         <p class="heading-h6-semi-bold">Information</p>

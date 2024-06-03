@@ -3,6 +3,11 @@
   .v-btn {
     letter-spacing: normal;
   }
+
+  .v-card--variant-outlined {
+    background-color: white;
+    border-color: rgb(var(--v-theme-neutral-200))
+  }
 }
 
 button.v-btn {
@@ -11,6 +16,12 @@ button.v-btn {
 
 .text-gray {
   color: #737373
+}
+
+hr {
+  height: 0; 
+  border: 0; 
+  border-top: 1px solid rgb(var(--v-theme-neutral-100))
 }
 
 // Font Weights

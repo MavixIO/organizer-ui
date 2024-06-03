@@ -1,6 +1,10 @@
 <script setup>
-const name = ref('Joe Bloggs')
-const email = ref('joe.bloggs@email.com')
+const contextStore = useContextStore()
+await contextStore.fetchContext()
+const me = contextStore.me
+
+const name = computed(() => me.displayName ? me.displayName : 'Joe Bloggs')
+const email = computed(() => me.email ? me.email : 'joe.bloggs@email.com')
 </script>
 
 <template>

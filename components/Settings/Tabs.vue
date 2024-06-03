@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <v-card rounded="lg">
+  <v-card rounded="lg" variant="outlined">
     <v-list>
       <v-list-item :to="{ name: 'settings-info' }">
         <template #prepend>
@@ -10,7 +10,7 @@
         </template>
         <v-list-item-title>Information</v-list-item-title>
       </v-list-item>
-      <v-list-item>
+      <v-list-item :to="{ name: 'settings-users' }">
         <template #prepend>
           <SvgoUserGroup width="24" height="24" class="mr-3" />
         </template>

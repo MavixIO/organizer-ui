@@ -3,11 +3,12 @@ useHead({ title: 'Settings' })
 definePageMeta({
   middleware: ['auth'],
 })
+
 const context = useContextStore()
 const orgStore = useOrganisationsStore()
 const schoolsStore = useSchoolsStore()
 
-const { data } = useAsyncData(() => {
+const { data } = useAsyncData('settings', () => {
   if (context.isOrgUser) {
     return orgStore.get(context.me.organizationId)
   } else {
