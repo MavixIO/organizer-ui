@@ -14,7 +14,7 @@ const infoLink = computed(() => {
         </template>
         <v-list-item-title>Information</v-list-item-title>
       </v-list-item>
-      <v-list-item :to="{ name: 'settings-users' }">
+      <v-list-item>
         <template #prepend>
           <SvgoUserGroup width="24" height="24" class="mr-3" />
         </template>
