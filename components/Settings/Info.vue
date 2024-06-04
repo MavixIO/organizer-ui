@@ -25,18 +25,18 @@ export default {
 
 <template>
   <v-card rounded="lg" class="pa-6" variant="outlined">
-    <v-row>
-      <v-col>
+    <div class="d-flex">
+      <div class="flex-grow-1">
         <p class="heading-h6-semi-bold">Information</p>
-        <p class="paragraph-small-regular">Some helper text explaining this is for the organisation page.</p>
-      </v-col>
-      <v-col md="3" lg="2">
+        <p class="paragraph-small-regular text-neutral-500">Some helper text explaining this is for the organisation page.</p>
+      </div>
+      <div class="flex-shrink-1">
         <v-btn variant="outlined">
-          <SvgoEdit02 width="20" height="20" />
+          <SvgoEdit02 width="20" height="20" class="mr-2" />
           Edit Profile
         </v-btn>
-      </v-col>
-    </v-row>
+      </div>
+    </div>
     <hr class="mt-6" >
     <v-row class="my-0">
       <v-col md="3">
