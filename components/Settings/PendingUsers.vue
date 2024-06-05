@@ -50,6 +50,9 @@ export default {
     totalItems () {
       return this.value.meta.total
     },
+    lastPage () {
+      return this.value.meta.lastPage
+    },
   },
   methods: {
     loadItems({ page }) {
@@ -109,7 +112,7 @@ export default {
         :loading="loading"
         item-value="id"
         show-select
-        :hide-default-footer="serverItems.length <= itemsPerPage"
+        :hide-default-footer="lastPage === 1"
         @update:options="loadItems"
       >
         <template #item.name="{item}">
