@@ -109,6 +109,7 @@ export default {
         :loading="loading"
         item-value="id"
         show-select
+        :hide-default-footer="serverItems.length <= itemsPerPage"
         @update:options="loadItems"
       >
         <template #item.name="{item}">

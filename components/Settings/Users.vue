@@ -98,6 +98,7 @@ export default {
         :items-length="totalItems"
         :loading="loading"
         item-value="name"
+        :hide-default-footer="serverItems.length <= itemsPerPage"
         @update:options="loadItems"
       >
         <template #item.name="{item}">
