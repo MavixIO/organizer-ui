@@ -6,5 +6,12 @@
 definePageMeta({
   layout: 'empty',
 })
-navigateTo({ name: 'registration' })
+const contextStore = useContextStore()
+await contextStore.fetchContext()
+const isLoggedIn = contextStore.isLoggedIn
+if (isLoggedIn) {
+  navigateTo({ name: 'dashboard' })
+} else {
+  navigateTo({ name: 'registration' })
+}
 </script>

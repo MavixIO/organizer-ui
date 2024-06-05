@@ -3,10 +3,17 @@
   .v-btn {
     letter-spacing: normal;
   }
-
+  .v-btn--variant-outlined,
   .v-card--variant-outlined {
     background-color: white;
-    border-color: rgb(var(--v-theme-neutral-200))
+    border-color: rgb(var(--v-theme-neutral-200));
+  }
+  .v-data-table__thead {
+    background-color: rgb(var(--v-theme-neutral-25));
+  }
+  .v-table > .v-table__wrapper > table > thead > tr > th {
+    border-top: 1px solid rgb(var(--v-theme-neutral-100));
+    border-bottom: 1px solid rgb(var(--v-theme-neutral-100));
   }
 }
 

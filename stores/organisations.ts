@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import type { Organization, User } from '~/common/types'
+import type { UserStatus } from '~/enums'
 
 interface RequestJoin {
   organizationId: string
@@ -10,6 +11,14 @@ interface SignUp {
   displayRole: string
   user: User
   organization: Organization
+}
+
+interface UsersQuery {
+  status: UserStatus
+  page: number
+  limit: number
+  roleId: string
+  search: string
 }
 
 export const useOrganisationsStore = defineStore('organisations', {
@@ -25,6 +34,15 @@ export const useOrganisationsStore = defineStore('organisations', {
     },
     async get(id: string) {
       return $fetch(`/api/v1/organizations/${id}`)
+    },
+    async getUsers({ id, query }: { id: string, query?: UsersQuery }) {
+      return $fetch(`/api/v1/organizations/${id}/users`, { query })
+    },
+    async approveUser({ id, userId, roleId }: { id: string, userId: string, roleId?: string }) {
+      return $fetch(`/api/v1/organizations/${id}/users/${userId}/approve`, { method: 'POST', body: { roleId } })
+    },
+    async rejectUser({ id, userId }: { id: string, userId: string }) {
+      return $fetch(`/api/v1/organizations/${id}/users/${userId}/reject`, { method: 'POST' })
     },
   },
 })

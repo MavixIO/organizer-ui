@@ -26,7 +26,10 @@ items.push(item)
 
 <template>
   <div class="mx-10 my-8">
-    <v-breadcrumbs :items="items" class="paragraph-small-regular pa-0 mb-2" />
+    <div class="d-flex">
+      <v-breadcrumbs :items="items" class="paragraph-small-regular pa-0 mb-2" />
+      <span class="paragraph-small-medium pa-0 mb-2 text-breadcrumb">/</span>
+    </div>
     <p v-if="!pending" class="heading-h2-semi-bold mb-8">{{ data.name }}</p>
     <v-row>
       <v-col cols="12" sm="6" md="3">

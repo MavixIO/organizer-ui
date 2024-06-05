@@ -3,6 +3,7 @@ const context = useContextStore()
 const infoLink = computed(() => {
   return context.isOrgUser ? { name: 'settings-organisation' } : { name: 'settings-school' }
 })
+const usersPage = computed(() => context.isSchoolUser ? 'settings-school-users' : 'settings-organisation-users')
 </script>
 
 <template>
@@ -14,7 +15,7 @@ const infoLink = computed(() => {
         </template>
         <v-list-item-title>Information</v-list-item-title>
       </v-list-item>
-      <v-list-item>
+      <v-list-item :to="{ name: usersPage}">
         <template #prepend>
           <SvgoUserGroup width="24" height="24" class="mr-3" />
         </template>

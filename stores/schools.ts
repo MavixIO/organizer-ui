@@ -35,8 +35,14 @@ export const useSchoolsStore = defineStore('schools', {
     async get(id: string) {
       return $fetch(`/api/v1/schools/${id}`)
     },
-    async getUsers({ id, query }: { id: string, query: UsersQuery }) {
+    async getUsers({ id, query }: { id: string, query?: UsersQuery }) {
       return $fetch(`/api/v1/schools/${id}/users`, { query })
+    },
+    async approveUser({ id, userId, roleId }: { id: string, userId: string, roleId?: string }) {
+      return $fetch(`/api/v1/schools/${id}/users/${userId}/approve`, { method: 'POST', body: { roleId } })
+    },
+    async rejectUser({ id, userId }: { id: string, userId: string }) {
+      return $fetch(`/api/v1/schools/${id}/users/${userId}/reject`, { method: 'POST' })
     },
   },
 })
