@@ -53,7 +53,7 @@ export default {
         <p class="paragraph-small-regular">Some helper text explaining this is for the organisation page.</p>
       </div>
       <div class="flex-shrink-1">
-        <v-btn variant="outlined" class="primary-button" rounded="xl">
+        <v-btn variant="outlined" class="primary-button" color="primary" rounded="xl">
           <SvgoUserAdd01 width="20" height="20" class="mr-2" />
           Invite User
         </v-btn>
@@ -125,8 +125,6 @@ export default {
 
 <style scoped>
 .primary-button {
-  border-color: rgb(var(--v-theme-primary));
-  color: rgb(var(--v-theme-primary));
   :deep(path) {
     stroke: rgb(var(--v-theme-primary));
   }

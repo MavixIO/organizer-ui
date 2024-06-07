@@ -13,20 +13,22 @@ const email = computed(() => me.email || '')
     flat
   >
     <div class="search-bar ml-10">
-      <v-text-field
-        variant="outlined"
-        density="compact"
-        hide-details
-        placeholder="Search"
-        rounded="xl"
-      >
-        <template #prepend-inner>
-          <SvgoSearch
-            width="20"
-            height="20"
-          />
-        </template>
-      </v-text-field>
+      <client-only>
+        <v-text-field
+          variant="outlined"
+          density="compact"
+          hide-details
+          placeholder="Search"
+          rounded="xl"
+        >
+          <template #prepend-inner>
+            <SvgoSearch
+              width="20"
+              height="20"
+            />
+          </template>
+        </v-text-field>
+      </client-only>
     </div>
     <template #append>
       <v-btn

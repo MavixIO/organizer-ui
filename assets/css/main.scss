@@ -2,8 +2,10 @@
   font-family: 'Figtree', sans-serif;
   .v-btn {
     letter-spacing: normal;
+    text-transform: none;
   }
-  .v-btn--variant-outlined,
+  .v-field--variant-outlined,
+  .v-btn--variant-outlined:not(.text-primary),
   .v-card--variant-outlined {
     background-color: white;
     border-color: rgb(var(--v-theme-neutral-200));
@@ -15,10 +17,6 @@
     border-top: 1px solid rgb(var(--v-theme-neutral-100));
     border-bottom: 1px solid rgb(var(--v-theme-neutral-100));
   }
-}
-
-button.v-btn {
-  text-transform: none;
 }
 
 .text-gray {

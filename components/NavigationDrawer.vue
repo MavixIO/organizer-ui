@@ -39,7 +39,7 @@ const infoLink = computed(() => {
       </v-list-item>
 
       <v-list-item
-        to="/events"
+        :to="{ name: 'registrations' }"
         width="56"
         height="56"
         class="d-flex justify-center align-center"
